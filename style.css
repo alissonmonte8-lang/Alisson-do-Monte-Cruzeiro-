@@ -1,0 +1,213 @@
+/* -----------------------------
+   Variáveis de Cor (baseadas na imagem)
+   -----------------------------
+*/
+:root {
+    --color-dark-bg: #2B2B2B;  /* O cinza escuro do fundo */
+    --color-gold-accent: #DDC05E; /* O dourado/mostarda */
+    --color-text-light: #F5F5F5;  /* O texto claro */
+    --color-text-dark: #333333;   /* Para seções claras */
+    --color-whatsapp: #25D366;  /* Verde oficial do WhatsApp */
+}
+
+/* -----------------------------
+   Estilos Globais
+   -----------------------------
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+p {
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+/* -----------------------------
+   Seção Hero (Cabeçalho)
+   -----------------------------
+*/
+.hero {
+    background-color: var(--color-dark-bg);
+    padding: 60px 20px;
+    border-bottom: 5px solid var(--color-gold-accent);
+}
+
+.hero-title {
+    font-size: 2.8em;
+    font-weight: 900;
+    color: var(--color-gold-accent);
+    margin: 0;
+}
+
+.hero-subtitle {
+    font-size: 1.5em;
+    font-weight: 400;
+    color: var(--color-text-light);
+    margin-top: 10px;
+}
+
+/* -----------------------------
+   Seção de Serviços (ATUALIZADA)
+   -----------------------------
+*/
+.services {
+    background-color: #FFFFFF;
+    color: var(--color-text-dark);
+    padding: 50px 20px;
+}
+
+.services h3 {
+    color: var(--color-gold-accent);
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Novo Grid de Cards */
+.services-grid {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cards quebrem a linha em telas menores */
+    justify-content: center;
+    gap: 25px; /* Espaçamento entre os cards */
+    margin-top: 40px;
+}
+
+.service-card {
+    background-color: #f9f9f9;
+    border: 1px solid #eeeeee;
+    border-radius: 8px;
+    padding: 25px;
+    
+    /* Define a base de tamanho e permite crescer */
+    flex-basis: 280px; 
+    flex-grow: 1;
+    
+    max-width: 300px; /* Garante que não fiquem largos demais */
+    
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.service-card i {
+    font-size: 2.5em;
+    color: var(--color-gold-accent);
+    margin-bottom: 15px;
+}
+
+.service-card h4 {
+    font-size: 1.3em;
+    color: var(--color-dark-bg);
+    margin-bottom: 10px;
+    text-transform: none; /* Diferente dos títulos de seção */
+}
+
+.service-card p {
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 0; /* Remove margem inferior do parágrafo dentro do card */
+}
+
+
+/* -----------------------------
+   Seção CTA (WhatsApp)
+   -----------------------------
+*/
+.cta {
+    background-color: var(--color-dark-bg);
+    padding: 60px 20px;
+}
+
+.cta h3 {
+    color: var(--color-text-light);
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--color-whatsapp);
+    color: #FFFFFF;
+    padding: 15px 35px;
+    font-size: 1.2em;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #1EBE55;
+    transform: scale(1.05);
+}
+
+.cta-button i {
+    margin-right: 10px;
+}
+
+.whatsapp-info {
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: var(--color-text-light);
+    font-weight: 700;
+}
+
+/* -----------------------------
+   Rodapé
+   -----------------------------
+*/
+footer {
+    background-color: #1A1A1A;
+    color: #888;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+/* -----------------------------
+   Responsividade
+   -----------------------------
+*/
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.2em;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2em;
+    }
+
+    /* Ajusta os cards para telas menores */
+    .service-card {
+        flex-basis: 100%; /* Faz o card ocupar a largura total */
+        max-width: 100%;
+    }
+}
